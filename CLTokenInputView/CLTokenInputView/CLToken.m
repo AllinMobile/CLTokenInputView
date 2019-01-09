@@ -10,12 +10,13 @@
 
 @implementation CLToken
 
-- (id)initWithDisplayText:(NSString *)displayText context:(NSObject *)context
+- (id)initWithDisplayText:(NSString *)displayText user:(int)userId context:(nullable NSObject *)context
 {
     self = [super init];
     if (self) {
         self.displayText = displayText;
         self.context = context;
+        self.userId = userId;
     }
     return self;
 }

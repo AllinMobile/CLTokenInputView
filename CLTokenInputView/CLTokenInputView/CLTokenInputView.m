@@ -27,7 +27,6 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 
 @property (strong, nonatomic) CL_GENERIC_MUTABLE_ARRAY(CLToken *) *tokens;
 @property (strong, nonatomic) CL_GENERIC_MUTABLE_ARRAY(CLTokenView *) *tokenViews;
-@property (strong, nonatomic) CLBackspaceDetectingTextField *textField;
 @property (strong, nonatomic) UILabel *fieldLabel;
 
 
@@ -41,6 +40,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 - (void)commonInit
 {
     self.textField = [[CLBackspaceDetectingTextField alloc] initWithFrame:self.bounds];
+    self.textField.font = [UIFont fontWithName: @"Klavika" size: 14.0];
     self.textField.backgroundColor = [UIColor clearColor];
     self.textField.keyboardType = UIKeyboardTypeEmailAddress;
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -63,6 +63,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
     self.fieldLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     // NOTE: Explicitly not setting a font for the field label
     self.fieldLabel.textColor = self.fieldColor;
+    self.fieldLabel.font = [UIFont fontWithName: @"Klavika-Medium" size: 16.0];
     [self addSubview:self.fieldLabel];
     self.fieldLabel.hidden = YES;
 

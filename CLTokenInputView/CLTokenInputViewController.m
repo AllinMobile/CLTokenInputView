@@ -106,7 +106,7 @@
 {
     if (self.filteredNames.count > 0) {
         NSString *matchingName = self.filteredNames[0];
-        CLToken *match = [[CLToken alloc] initWithDisplayText:matchingName context:nil];
+        CLToken *match = [[CLToken alloc] initWithDisplayText:matchingName user:0 context:nil];
         return match;
     }
     // TODO: Perhaps if the text is a valid phone number, or email address, create a token
@@ -160,7 +160,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     NSString *name = self.filteredNames[indexPath.row];
-    CLToken *token = [[CLToken alloc] initWithDisplayText:name context:nil];
+    CLToken *token = [[CLToken alloc] initWithDisplayText:name user:0 context:nil];
     if (self.tokenInputView.isEditing) {
         [self.tokenInputView addToken:token];
     }

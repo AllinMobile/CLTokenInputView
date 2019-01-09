@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "CLToken.h"
+#import "CLBackspaceDetectingTextField.h"
 
 #if __has_feature(objc_generics)
 #define CL_GENERIC_ARRAY(type) NSArray<type>
@@ -99,7 +100,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) CL_GENERIC_ARRAY(CLToken *) *allTokens;
 @property (readonly, nonatomic, getter = isEditing) BOOL editing;
 @property (readonly, nonatomic) CGFloat textFieldDisplayOffset;
-@property (copy, nonatomic, nullable) NSString *text;
+@property (readonly, nonatomic, nullable) NSString *text;
+@property (strong, nonatomic) CLBackspaceDetectingTextField *textField;
 
 - (void)addToken:(CLToken *)token;
 - (void)removeToken:(CLToken *)token;
